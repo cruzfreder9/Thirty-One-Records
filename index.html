@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es-NIC">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thirty One Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head> 
+<body>
+
+    <div class="contenedor">
+        <h1 style="color: white;">Bienvenido a Thirty one Records</h1>
+         <p style="color: white;"> <i> !Haz click en alguno de los botones para ver la información de los artistas¡ </i>
+        </p>
+       
+                <a href="#" class="boton-redireccion" onclick="mostrarartista('A'); removerTitulo(); setActiveBoton(this);">xxKevin</a>
+                <a href="#" class="boton-redireccion" onclick="mostrarartista('B'); removerTitulo(); setActiveBoton(this);">Lil Catt</a>
+                <a href="#" class="boton-redireccion" onclick="mostrarartista('C'); removerTitulo(); setActiveBoton(this);">ING31</a>
+                <a href="#" class="boton-redireccion" onclick="mostrarartista('D'); removerTitulo(); setActiveBoton(this);">Zen OG</a>
+                <a href="#" class="boton-redireccion" onclick="mostrarartista('E'); removerTitulo(); setActiveBoton(this);">Oszel</a>
+
+            <div id="info-artista">
+
+            </div>
+            <img id="foto-artista" src="">
+
+    </div>
+
+    <script>
+function removerTitulo() {
+    var h1 = document.querySelector('h1');
+    if (h1) {
+        h1.remove();
+    }
+}
+
+function setActiveBoton(element){
+    document.querySelectorAll('.boton-redireccion').forEach(function(btn){
+        btn.classList.remove('active');
+    });
+    if(element){
+        element.classList.add('active');
+    }
+}
+
+function animarSeccion(){
+    const info = document.getElementById('info-artista');
+    const foto = document.getElementById('foto-artista');
+    if (!info || !foto) return;
+    info.classList.remove('animar');
+    foto.classList.remove('animar');
+    void info.offsetWidth;
+    void foto.offsetWidth;
+    info.classList.add('animar');
+    foto.classList.add('animar');
+}
+
+function mostrarartista(letra){
+
+    let info = document.getElementById("info-artista");
+    let foto = document.getElementById("foto-artista"); 
+
+    animarSeccion();
+
+    if(letra == "A"){
+info.innerHTML =`
+<p style="color: white;">xxKevin es un artista nicaragüense con una versatilidad musical que abarca
+<br> géneros como trap, rap, reggaeton, dancehall, funk y R&B, y subgéneros
+<br> electronicos como el Hyperpop y JeyseyClub. <br><br>
+<ul>
+   <center><h3 style="color: white;">Top Canciones:</h3></center>
+    <center><li style="color: white;"> SOBRADO con 112,101 reproducciones </li></center>
+    <center><li style="color: white;"> La Realeza con 39,368 reproducciones </li></center>
+    <center><li style="color: white;"> Fight Back con 37,278 reproducciones </li></center>
+    <center><li style="color: white;"> LEGENDARIO con 7,686 reproducciones </li></center>
+</ul>
+`;
+foto.src="topsK.jpg";
+
+
+}
+
+else if(letra == "B"){
+info.innerHTML =`
+<p style="color: white;">Lil Catt es un artista nicaragüense conocido por lo que han sido sus mejores
+    <br> proyectos, su EP llamado PLUGSTAR y su tema Jordan White
+<ul>
+    <center><h3 style="color: white;">Top Canciones:</h3></center>
+    <center><li style="color: white;"> Mi Yahir con 6,251 reproducciones </li></center>
+    <center><li style="color: white;"> TRAPPING con 3,564 reproducciones </li></center>
+    <center><li style="color: white;"> R3D con 3,309 reproducciones </li></center>
+    <center><li style="color: white;"> Hello Kitty con 2,333 reproducciones </li></center>
+</ul>
+`;
+foto.src="topsL.jpg";
+}
+
+else if(letra == "C"){
+info.innerHTML =`
+<p style="color: white;">ING31 es un artista nicaragüense que se caracteriza por la versatilidad
+    <br> y la fusión de sonidos urbanos, tropicales y experimentales, con un enfoque
+    <br> en el reggaetón, género con el que busca proyectarse a nivel internacional.
+<ul>
+   <center><h3 style="color: white;">Top Canciones:</h3></center>
+   <center><li style="color: white;"> A LO CRIMINAL con 12,887 reproducciones </li></center>
+   <center><li style="color: white;"> LA LUZ con 8,596 reproducciones </li></center>
+   <center><li style="color: white;"> El Corrido con 2,002 reproducciones </li></center>
+   <center><li style="color: white;"> DANCA con 1,013 reproducciones </li></center>
+</ul>
+`;
+foto.src="topsI.jpg";
+}
+
+else if(letra == "D"){
+info.innerHTML =`
+<p style="color: white;">Zen OG es un artista nicaragüense con aficiones en el trap y el reggaetón
+   <br> en los cuales se ha destacado por su estilo único y
+   <br> su habilidad para fusionar diferentes géneros musicales,
+   <br> creando un sonido distintivo que lo ha llevado a ganar
+   <br> reconocimiento en la escena musical urbana de Nicaragua.
+<ul>
+    <center><h3 style="color: white;">Top Canciones:</h3></center>
+    <center><li style="color: white;"> FiFi con 273 reproducciones </li></center>
+    <center><li style="color: white;"> Paris con 416 reproducciones </li></center>
+</ul>
+`;
+foto.src="topsZ.jpg";
+}
+
+else if(letra == "E"){
+info.innerHTML =`
+<p style="color: white;">Oszel es un artista nicaragüense con un estilo musical unico
+    <br> que se caracteriza por su versatilidad y la forma en la que escribe sus Letras,
+    <br> todo esto lo ha llevado a ser uno de los artistas mas destacados de la escena musical urbana de Nicaragua.
+<ul>
+    <center><h3 style="color: white;">Top Canciones:</h3></center>
+    <center><li style="color: white;"> Ven con 1,000 reproducciones </li></center>
+    <center><li style="color: white;"> ASI SOY YO con 3,000 reproducciones </li></center>
+</ul>
+`;
+foto.src="topsO.jpg";
+}
+
+}
+
+</script>
+</body>
+</html>

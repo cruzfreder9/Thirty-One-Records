@@ -1,0 +1,76 @@
+body,html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('31.png');
+    background-color: black;
+    background-size: cover;
+    background-position: 30%;
+}
+
+body ul {
+    text-align: left;
+}
+
+.contenedor {
+    text-align: center;
+    
+    padding: 20px;
+    background-color: rgb(29, 51, 12);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.boton-redireccion{
+    background-color: black;
+    color: rgb(133, 178, 135);
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20PX;
+    border-radius: 5PX;
+    text-decoration: none;
+}
+.boton-redireccion:hover{
+    background-color: rgb(81, 160, 90);
+    color:black;
+    font-style:oblique;
+}
+.boton-redireccion.active {
+    background-color: rgb(81, 160, 90);
+    color: black;
+    font-style: oblique;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Aumenta el tamaño de la imagen del artista */
+#foto-artista {
+    display: block;
+    width: 400px;
+    max-width: 90vw;
+    height: auto;
+    margin: 18px auto 0;
+    opacity: 0;
+}
+
+#info-artista {
+    opacity: 0;
+}
+
+.animar {
+    animation: fadeInUp 500ms ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
